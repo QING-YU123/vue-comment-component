@@ -1,6 +1,7 @@
 <template>
     <div>
-        <router-view></router-view> 
+        <el-button type="" @click="">Hello</el-button>
+        <div class=" bg-blue-400">hello</div>
     </div>
 </template>
 
