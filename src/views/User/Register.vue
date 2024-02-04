@@ -16,12 +16,14 @@
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="submitForm()">注册</el-button>
-            </el-form-item> 
+            </el-form-item>
         </el-form>
     </div>
 </template>
 
 <script setup lang="ts">
+import { register } from '@/apis/user';
+import { ElMessage } from 'element-plus';
 import { reactive } from 'vue';
 
 
@@ -47,13 +49,16 @@ const data = reactive({
         ],
         phone: [
             { required: true, message: '请输入手机号', trigger: 'blur' },
-            { pattern: /^1[3|4|5|7|8][0-9]\d{8}$/, message: '请输入正确的手机号', trigger: 'blur' }
+            { min: 6, max: 20, message: '请输入正确的手机号', trigger: 'blur' }
         ]
     }
 })
 
-function submitForm() {
-    
+async function submitForm() {
+    console.log(data.registerModule);
+
+    await register(data.registerModule);
+    ElMessage.success('注册成功');
 }
 
 

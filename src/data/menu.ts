@@ -13,5 +13,10 @@ export const menuData = [
         name: "注册",
         router: "Register",
         component: () => import("@/views/User/Register.vue"),
+    },
+    {
+        name: "登录",
+        router: "Login",
+        component: () => import("@/views/User/Login.vue"),
     }
 ]

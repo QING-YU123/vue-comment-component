@@ -5,7 +5,7 @@
         <Menu></Menu>
       </el-aside>
       <el-container class="whole-box">
-        <el-header>Qingyu的工具铺</el-header>
+        <el-header>欢迎你{{ userStore.getUsername() }}</el-header>
         <el-main class="whole-box__main-box">
           <router-view></router-view>
         </el-main>
@@ -17,6 +17,9 @@
 
 <script setup lang="ts">
 import Menu from './Menu.vue';
+import { useCounterStore } from '@/stores/user';
+
+const userStore = useCounterStore()
 
 </script>
 
