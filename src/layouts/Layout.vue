@@ -1,14 +1,46 @@
 <template>
-    <div>
-        <el-button type="" @click="">Hello</el-button>
-        <div class=" bg-blue-400">hello</div>
-    </div>
+  <div>
+    <el-container>
+      <el-aside width="200px">
+        <Menu></Menu>
+      </el-aside>
+      <el-container class="whole-box">
+        <el-header>Qingyu的工具铺</el-header>
+        <el-main class="whole-box__main-box">
+          <router-view></router-view>
+        </el-main>
+        <el-footer>footer</el-footer>
+      </el-container>
+    </el-container>
+  </div>
 </template>
 
 <script setup lang="ts">
+import Menu from './Menu.vue';
 
 </script>
 
 <style scoped lang="sass">
+
+.whole-box
+  height: 100vh
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  &__main-box
+    padding: 0 20px
+    overflow: auto
+    background-color: #f2f2f2
+    flex: 1
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    & > *
+      margin-top: 20px
+      width: 100%
+      max-width: 800px
+      &:first-child
+        margin-top: 0
 
 </style>
